@@ -1,11 +1,10 @@
 package main
 
-import (
-	//"github.com/MohammadAminLouragi/leetCode/array"
-	"fmt"
+import linledList "github.com/MohammadAminLouragi/leetCode/linkedList"
 
-	. "github.com/MohammadAminLouragi/leetCode/queue"
-)
+//"github.com/MohammadAminLouragi/leetCode/array"
+
+// "github.com/MohammadAminLouragi/leetCode/queue"
 
 func main() {
 
@@ -25,9 +24,16 @@ func main() {
 	// fmt.Println(q.DeQueue())
 	// fmt.Println(q.DeQueue())
 	// fmt.Println(q.DeQueue())
+
+	obj := linledList.Constructor()
+	obj.AddAtIndex(2,1)
+	obj.AddAtIndex(3,4)
+	obj.AddAtTail(1)
+	obj.PrintList()
+	param_1 := obj.Get(0)
+	println(param_1)
+	obj.DeleteAtIndex(0)
+	param_2 := obj.Get(0)
+	println(param_2)
 	
-	
-
-
-
 }
