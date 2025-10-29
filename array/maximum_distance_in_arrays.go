@@ -1,56 +1,30 @@
 package array
 
-import "math"
-
 func MaxDistance(arrays [][]int) int {
-	maxDistance := 0
-	subArray := []int{}
-	maxArray := []int{}
-	minArray := []int{}
+	minValue := arrays[0][0]
+    maxValue := arrays[0][len(arrays[0])-1]
+    result := 0
 
-	for _, array := range arrays {
-		subArray = append(subArray, array[0], array[len(array)-1])
-	}
-	if len(subArray)%2 != 0 {
-		for i := 0; i < len(subArray); i += 2 {
-			if subArray[i] < subArray[i+1] {
-				minArray = append(minArray, subArray[i])
-				maxArray = append(maxArray, subArray[i+1])
-			} else {
-				minArray = append(minArray, subArray[i+1])
-				maxArray = append(maxArray, subArray[i])
-			}
+    for i := 1; i < len(arrays); i++ {
+        arr := arrays[i]
+        result = max(result, max(abs(arr[len(arr)-1]-minValue), abs(maxValue-arr[0])))
+        minValue = min(minValue, arr[0])
+        maxValue = max(maxValue, arr[len(arr)-1])
+    }
+    return result
+}
 
-		}
-	} else {
-		for i := 1; i < len(subArray); i += 2 {
-			if subArray[i] < subArray[i+1] {
-				minArray = append(minArray, subArray[i])
-				maxArray = append(maxArray, subArray[i+1])
-			} else {
-				minArray = append(minArray, subArray[i+1])
-				maxArray = append(maxArray, subArray[i])
-			}
-		}
-		minArray = append(minArray, subArray[0])
-		maxArray = append(maxArray, subArray[0])
-	}
+func max(a, b int) int {
+    if a > b { return a }
+    return b
+}
 
-	min := minArray[0]
-	for i := 0; i < len(minArray); i++ {
-		if min > minArray[i] {
-			min = minArray[i]
-		}
-	}
+func min(a, b int) int {
+    if a < b { return a }
+    return b
+}
 
-	max := maxArray[0]
-	for i := 0; i < len(maxArray); i++ {
-		if max < maxArray[i] {
-			max = maxArray[i]
-		}
-	}
-
-	maxDistance = int(math.Abs(float64(max - min)))
-
-	return maxDistance
+func abs(x int) int {
+    if x < 0 { return -x }
+    return x
 }
