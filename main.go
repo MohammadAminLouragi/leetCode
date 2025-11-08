@@ -1,6 +1,10 @@
 package main
 
-import "github.com/MohammadAminLouragi/leetCode/array"
+import (
+	"fmt"
+
+	"github.com/MohammadAminLouragi/leetCode/stack"
+)
 
 // type ListNode struct {
 //     Val  int
@@ -39,27 +43,10 @@ import "github.com/MohammadAminLouragi/leetCode/array"
 
 func main() {
 
-	ar := []int{0,2,1}
-	output := array.ArrayNesting(ar)
-	print(output)
 
-	// obj := stack.CustomStackIncreamental(3)
-	// obj.Push(1)
-	// obj.Push(2)
-	// fmt.Println(obj.Pop()," Pop")
-	// obj.Push(2)
-	// obj.Push(3)
-	// obj.Push(4)
-	// obj.Increment(5, 100)
-	// obj.Increment(2, 100)
-	// fmt.Println(obj.Pop()," Pop")
-	// fmt.Println(obj.Pop()," Pop")
-	// fmt.Println(obj.Pop()," Pop")
-	// fmt.Println(obj.Pop()," Pop")
-
-	// head := makeList([]int{0, 1, 2, 3})
-	// nums := []int{0, 1, 3}
-	// fmt.Println(numComponents(head, nums)) // Output: 2
+	 fmt.Println(stack.ValidTicTacToe([]string{"O  ", "   ", "   "})) // false
+    // fmt.Println(stack.ValidTicTacToe([]string{"XXX", "   ", "OOO"})) // false
+    // fmt.Println(stack.ValidTicTacToe([]string{"XOX", "O O", "XOX"})) // true
 }
 
 // func findNumbers(nums []int) int {
