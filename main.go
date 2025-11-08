@@ -1,10 +1,6 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/MohammadAminLouragi/leetCode/stack"
-)
+import "github.com/MohammadAminLouragi/leetCode/array"
 
 // type ListNode struct {
 //     Val  int
@@ -43,20 +39,23 @@ import (
 
 func main() {
 
-	obj := stack.CustomStackIncreamental(3)
-	obj.Push(1)
-	obj.Push(2)
-	fmt.Println(obj.Pop()," Pop")
-	obj.Push(2)
-	obj.Push(3)
-	obj.Push(4)
-	obj.Increment(5, 100)
-	obj.Increment(2, 100)
-	fmt.Println(obj.Pop()," Pop")
-	fmt.Println(obj.Pop()," Pop")
-	fmt.Println(obj.Pop()," Pop")
-	fmt.Println(obj.Pop()," Pop")
-	
+	ar := []int{0,2,1}
+	output := array.ArrayNesting(ar)
+	print(output)
+
+	// obj := stack.CustomStackIncreamental(3)
+	// obj.Push(1)
+	// obj.Push(2)
+	// fmt.Println(obj.Pop()," Pop")
+	// obj.Push(2)
+	// obj.Push(3)
+	// obj.Push(4)
+	// obj.Increment(5, 100)
+	// obj.Increment(2, 100)
+	// fmt.Println(obj.Pop()," Pop")
+	// fmt.Println(obj.Pop()," Pop")
+	// fmt.Println(obj.Pop()," Pop")
+	// fmt.Println(obj.Pop()," Pop")
 
 	// head := makeList([]int{0, 1, 2, 3})
 	// nums := []int{0, 1, 3}
