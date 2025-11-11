@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/MohammadAminLouragi/leetCode/stack"
+	"github.com/MohammadAminLouragi/leetCode/array"
 )
 
 // type ListNode struct {
@@ -43,10 +43,9 @@ import (
 
 func main() {
 
-
-	 fmt.Println(stack.ValidTicTacToe([]string{"O  ", "   ", "   "})) // false
-    // fmt.Println(stack.ValidTicTacToe([]string{"XXX", "   ", "OOO"})) // false
-    // fmt.Println(stack.ValidTicTacToe([]string{"XOX", "O O", "XOX"})) // true
+	fmt.Println(array.FindMaxLength([]int{0, 1}))
+	fmt.Println(array.FindMaxLength([]int{0, 1,0}))
+	fmt.Println(array.FindMaxLength([]int{0,1,1,1,1,1,0,0,0}))
 }
 
 // func findNumbers(nums []int) int {
