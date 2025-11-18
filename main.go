@@ -7,32 +7,26 @@ import (
 )
 
 func main() {
-	l1 := &linledList.P3ListNode{Val: 2}
-	l1.Next = &linledList.P3ListNode{Val: 4}
-	l1.Next.Next = &linledList.P3ListNode{Val: 3}
 
-	l2 := &linledList.P3ListNode{Val: 5}
-	l2.Next = &linledList.P3ListNode{Val: 6}
-	l2.Next.Next = &linledList.P3ListNode{Val: 4}
+	l1 := &linledList.CycleListNode{Val: 1}
+	//l2 := &linledList.CycleListNode{Val: 2}
+	// l3 := &linledList.CycleListNode{Val: 0}
+	// l4 := &linledList.CycleListNode{Val: -4}
+	// l5 := &linledList.CycleListNode{Val: 4}
+	// l6 := &linledList.CycleListNode{Val: 5}
 
-	// h := l1
-	// for h !=nil{
-	// 	fmt.Print(h.Val , " -> ")
-	// 	h = h.Next
-	// }
+	// l1.Next = l2
+	// l2.Next = l1
+	//  l3.Next = l4
+	// l4.Next = l2
+	// l5.Next = l6
+	// l6.Next = l3
 
-	// fmt.Println()
-	// h = l2
-	// for h !=nil{
-	// 	fmt.Print(h.Val , " -> ")
-	// 	h = h.Next
-	// }
-	result := linledList.AddTwoNumbers(l1, l2)
-
-	fmt.Println()
-	for result !=nil{
-		fmt.Print(result.Val , " -> ")
-		result = result.Next
+	node := linledList.DetectCycle(l1)
+	if node == nil {
+		fmt.Println("There is no Cycle")
+	}else{
+		fmt.Println("Cycle start at Position with value = ",node.Val)
 	}
-
+	
 }
